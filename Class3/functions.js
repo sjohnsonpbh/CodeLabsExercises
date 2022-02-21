@@ -39,3 +39,4 @@ function punch() {
     console.log("kapow");
 }
 
+let name = "Scott";
