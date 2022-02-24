@@ -1,22 +1,56 @@
-// grab everything we need
-const crazyButtons = document.querySelectorAll(".btn-crazy");
+// grab what we need
+const startButton = document.querySelector('[data-action="start"]');
+const stopButton = document.querySelector('[data-action="stop"]');
+const resetButton = document.querySelector('[data-action="reset"]');
+const minutes = document.querySelector(".minutes");
+const seconds = document.querySelector(".seconds");
+let timerTime = 56;
+let isRunning = false;
+let interval;
 
-// define our functions
-function goCrazy() {
-    // get a random number for the left offset
-    // get a random number for the top offset
-    const offsetLeft =
-        Math.random() * (window.innerWidth - this.clientWidth);
-
-    const offsetTop =
-        Math.random() * window.innerHeight - this.clientHeight;
-
-    // apply those numbers to the button
-    this.style.top = offsetTop + "px";
-    this.style.left = offsetLeft + "px";
+// add functions
+function startTimer() {
+    if (isRunning) return;
+    isRunning = true;
+    interval = setInterval(incrementTimer, 1000);
 }
 
-// add event listeners
-crazyButtons.forEach((button) =>
-    button.addEventListener("mouseenter", goCrazy)
-);
+function stopTimer() {
+    if (!isRunning) return;
+    isRunning = false;
+    clearInterval(interval);
+}
+function resetTimer() {
+    stopTimer();
+
+    timerTime = 0;
+    minutes.innerText = "00";
+    seconds.innerText = "00";
+}
+function pad(number) {
+    // ternerary operator
+    // first part is condition, second is the "if true" statement, third is the "if false" stmt.
+    return number < 10 ? "0" + number : number;
+
+    // if stmt is replaced by a ternerary operator
+    // if (number < 10) {
+    //   return "0" + number;
+    // } else {
+    //   return number;
+    // }
+}
+
+function incrementTimer() {
+    timerTime++;
+
+    const numOfMinutes = Math.floor(timerTime / 60);
+    const numOfSeconds = timerTime % 60;
+
+    minutes.innerText = pad(numOfMinutes);
+    seconds.innerText = pad(numOfSeconds);
+}
+
+// add eventlisteners
+startButton.addEventListener("click", startTimer);
+stopButton.addEventListener("click", stopTimer);
+resetButton.addEventListener("click", resetTimer);
