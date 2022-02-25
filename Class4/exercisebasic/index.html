@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ugly Colors Button Basic</title>
+
+    <style>
+      .btn-lg {
+        font-size: 40px;
+      }
+      .main {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ## Exercise #1: Basic
+
+**Aim**: Create a button that changes the background and text color randomly when clicked -->
+
+    <div class="main" id="mybutton">
+      <button class="btn-lg">Ugly Colors?</button>
+    </div>
+
+    <script>
+      // get the background, text color
+      myBackground = document.querySelector(".btn-lg");
+      myTextColor = document.getElementById("mybutton");
+
+      // function to change background and color randomly
+      // NOTE: this should probably be one function, not two
+      function changeBackground() {
+        let randColor1 =
+          "#" +
+          (0xffffffff - Math.random() * 0xffffffff).toString(16).substr(0, 6);
+        document.body.style.background = randColor1;
+      }
+      function changeTextColor() {
+        let randColor2 =
+          "#" +
+          (0xffffffff - Math.random() * 0xffffffff).toString(16).substr(0, 6);
+        document.getElementById("mybutton").style.backgroundColor = randColor2;
+      }
+
+      // add event listeners - onclick
+      myBackground.addEventListener("click", changeBackground);
+      myBackground.addEventListener("click", changeTextColor);
+    </script>
+  </body>
+</html>
