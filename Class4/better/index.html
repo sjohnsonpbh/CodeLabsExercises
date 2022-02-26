@@ -78,8 +78,9 @@
                 z-index: 9;
             }
             .bookmark {
-                display: block;
+                display: flex;
                 background: #fff;
+                position: relative;
                 color: #999;
                 transition: 0.3s ease all;
                 border-bottom: 1px solid #ddd;
@@ -98,6 +99,31 @@
                 border-bottom-right-radius: 5px;
                 border-bottom: 0;
             }
+            .bookmark .img {
+                background-color: #ddd;
+                border-radius: 3px;
+                background-image: url("https://avatars.githubusercontent.com/u/47424009?v=4");
+                background-size: cover;
+                width: 120px;
+                height: 80px;
+                margin-right: 20px;
+            }
+            .bookmark .title {
+                display: flex;
+                align-items: center;
+            }
+            .bookmark .glyphicon-remove {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #eee;
+                font-size: 12px;
+                transition: 0.3x ease color;
+                cursor: pointer;
+            }
+            .bookmark:hover .glyphicon-remove {
+                color: #aaa;
+            }
         </style>
     </head>
     <body>
@@ -107,12 +133,13 @@
                 <div class="floater-top">
                     <input type="submit" class="form-control" />
                 </div>
+
+                <div class="floater-button">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        Add
+                    </button>
+                </div>
             </form>
-            <div class="floater-botton">
-                <button type="submit" class="btn btn-primary btn-sm">
-                    Add
-                </button>
-            </div>
         </div>
         <div class="bookmarks-list content"></div>
 
