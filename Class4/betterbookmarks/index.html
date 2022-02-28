@@ -87,6 +87,7 @@
             .bookmark {
                 display: block;
                 background: #fff;
+                position: relative;
                 color: #999;
                 padding: 20px;
                 transition: 0.3s ease all;
@@ -105,6 +106,31 @@
                 border-bottom-right-radius: 5px;
                 border-bottom: 0;
             }
+            .bookmark .img {
+                background-color: #ddd;
+                border-radius: 3px;
+                background-size: cover;
+                background-position: top center;
+                width: 120px;
+                height: 80px;
+                margin-right: 20px;
+            }
+            .bookmark .title {
+                display: flex;
+                align-items: center;
+            }
+            .bookmark .glyphicon-remove {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #eee;
+                font-size: 12px;
+                transition: 0.3s ease color;
+                cursor: pointer;
+            }
+            .bookmark:hover .glyphicon-remove {
+                color: #aaa;
+            }
         </style>
     </head>
     <body>
@@ -116,8 +142,7 @@
                     <input
                         type="text"
                         class="form-control"
-                        placeholder="What's on your mind?"
-                        id="form-id"
+                        placeholder="Paste a bookmark here and hit enter!"
                     />
                 </div>
                 <div class="floater-bottom">
