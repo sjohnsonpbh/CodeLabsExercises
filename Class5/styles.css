@@ -57,3 +57,7 @@ input {
 input:focus {
     outline: 3px solid #e11d48;
 }
+
+.my-user .my-pass {
+    text-align: center;
+}
