@@ -5,21 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ere</title>
-        <style>
-            #.container {
-                width: 500px;
-                border: 1px solid black;
-            }
-            #.boxes {
-                width: 300px;
-                float: left; /* add this */
-                border: 1px solid red;
-            }
-            #.title-text {
-                border: 1px solid green;
-                overflow: hidden; /* if you don't want #second to wrap below #first */
-            }
-        </style>
+        <link rel="stylesheet" href="./styles.css" />
     </head>
     <body>
         <!-- **Aim**: 
@@ -27,23 +13,32 @@
 
         <div class="container">
             <form>
-                <div class="title-text">
-                    username: <br />
-                    password:
-                </div>
                 <div class="boxes">
-                    <input type="text" class="myusername" id="myusername" />
-                </div>
+                    <input
+                        type="text"
+                        class="username"
+                        id="username"
+                        placeholder="Username"
+                    />
 
-                <div class="text-boxes">
                     <input
                         type="password"
-                        class="username"
+                        class="password"
                         id="password"
                         autocomplete="off"
+                        placeholder="Password"
                     />
-                    <input type="button" value="submit" />
                 </div>
+                <div class="sub">
+                    <input
+                        id="submitter"
+                        class="btn submitter"
+                        type="button"
+                        value="submit"
+                        onclick="saveLocal()"
+                    />
+                </div>
+                <div class="showFormSubmit"></div>
             </form>
         </div>
 
