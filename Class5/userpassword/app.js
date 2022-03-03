@@ -64,16 +64,7 @@ function saveLocal() {
     classOfTheDiv.innerHTML = injectHtml;
     console.log("bigDiv is " + classOfTheDiv);
 
-    // this helps. I think I can get it in the am with some coffee.
-    // Thanks a lot! Yeah, not sure about my sound issue. I have a new PC and new headphones... so that. Gonna call it a night! You rock!
 
-    // let div = document.querySelector(".classOfTheDiv")
-    // div.innerHTML += `
-    // <div id="some-id">Some content</div>
-    // `
-
-    // showSubmission.innerHTML = injectHtml
-    // i tried both several ways, getting closer!
 }
 
 
