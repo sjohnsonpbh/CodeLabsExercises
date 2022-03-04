@@ -19,6 +19,7 @@ Notes
 The resulting array's sort order is dependent on the input values.
 All inputs provided in the test scenarios are valid.
 If the start is greater than the end, return a descendingly sorted array; otherwise, ascendingly sorted.
+
 Exercise #3: Advanced
 Aim: Create a function that takes three collections of arguments and returns the sum of the product of the grouped numbers.
 
