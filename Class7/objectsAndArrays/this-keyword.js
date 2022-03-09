@@ -49,7 +49,7 @@ function Company(name) {
 const codefi = new Company("Codefi");
 console.log("'this' in Constructor Scope:", codefi.name);
 
-// getisHappy.call(player);  // code coach - why does this not work? not defined
+// getisHappy.call(player);  
 
 //  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
 
