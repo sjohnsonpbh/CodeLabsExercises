@@ -1,4 +1,4 @@
-console.log("The scripts.js file is loaded.");
+// console.log("The scripts.js file is loaded.");
 /*
 
     What is the initial goal of this file?
@@ -21,6 +21,7 @@ function plusFive(baseno) {
 
     let sum = (num + baseno)
     console.log('sum:', sum)
+
 }
 
 plusFive(2);

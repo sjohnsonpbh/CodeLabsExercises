@@ -32,11 +32,9 @@ asciiCapitalize("Oh what a beautiful morning.")    ➞    "oH wHaT a BeauTiFuL m
 
 //  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
 function asciiCapitalize(phrase) {
-    let newStr = '';
-    // loop over phrase characters
-    if 
-    
-    console.log('letters:', letters);
+
+
+    console.log('phrase:', phrase);
 }
 
 asciiCapitalize("to be or not to be!");
