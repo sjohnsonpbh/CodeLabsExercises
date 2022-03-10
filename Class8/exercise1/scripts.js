@@ -1,4 +1,4 @@
-// console.log("The scripts.js file is loaded.");
+console.log("The scripts.js file is loaded.");
 /*
 
     What is the initial goal of this file?
@@ -16,10 +16,16 @@
 //  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
-function plusFive(baseno) {
+function plusFive(baseNum) {
     let num = 5;
 
-    let sum = (num + baseno)
+    let sum = (num + baseNum)
+
+    console.log('sum:', sum);
+    return function makePlusFunction(sum) {
+        alert("ere");
+        console.log('sum:', sum);
+    }
     console.log('sum:', sum)
 
 }
@@ -27,7 +33,8 @@ function plusFive(baseno) {
 plusFive(2);
 plusFive(-8);
 
-
+// makePlusFunction(10);
+// makePlusFunction(5)
 //  +++++++++++++++++++ EVENT LISTENERS +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTION CALLS +++++++++++++++++++
