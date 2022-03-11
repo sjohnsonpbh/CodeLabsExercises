@@ -27,17 +27,57 @@ asciiCapitalize("Oh what a beautiful morning.")    ➞    "oH wHaT a BeauTiFuL m
 
 */
 
+// the below works for 1 character, need to do whold phrase
+// let capPhrase = phrase.charCodeAt(phrase);
 
 //  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
-function asciiCapitalize(phrase) {
+// function asciiCapitalize(phrase) {
+//     // create empty array
+//     let charCodeArr = [];
+//     // loop through phrase string
+//     for (let asciChar of phrase) {
+
+//         // let capPhrase = phrase.charCodeAt(phrase);
+//         // console.log('capPhrase:', capPhrase);
+//         let makeCaps = phrase.charCodeAt(asciChar);
+//         console.log('makeCaps:', makeCaps)
+//         charCodeArr.push(makeCaps);
+//         console.log('charCodeArr:', charCodeArr)
+
+//         // return the array charCodeArr
+//         return charCodeArr;
+//         // check for even/odd
+
+//         // push onto array
 
 
-    console.log('phrase:', phrase);
+
+//     }
+// }
+
+function asciiCapitalize(passedString) {
+    // empty array
+    let charCodeArr = [];
+
+    for (let i = 0; i < passedString.length; i++) {
+        let asciChar = passedString.charCodeAt(i);
+        console.log('asciChar:', asciChar);
+        charCodeArr.push(asciChar);
+    }
+    // return the array 
+    return charCodeArr;
 }
 
-asciiCapitalize("to be or not to be!");
+asciiCapitalize("to be or not to be.");
+
+
+// loop through the string
+// compare is even/odd(caps)/(lower)
+
+
+
 
 //  +++++++++++++++++++ EVENT LISTENERS +++++++++++++++++++
 

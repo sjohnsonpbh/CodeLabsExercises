@@ -16,22 +16,60 @@ console.log("The scripts.js file is loaded.");
 //  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
-function plusFive(baseNum) {
+function makePlusFunction(baseNum) {
     let num = 5;
-
     let sum = (num + baseNum)
-
     console.log('sum:', sum);
-    return function makePlusFunction(sum) {
-        alert("ere");
-        console.log('sum:', sum);
-    }
-    console.log('sum:', sum)
+    return function plusFive(sum) {
 
+        let plusSum = sum + 5
+        console.log('sum:', sum);
+        console.log('plusSum:', plusSum)
+        return plusSum;
+    }
 }
 
-plusFive(2);
-plusFive(-8);
+makePlusFunction(10);
+makePlusFunction(5);
+
+// const plusFive = makePlusFunction(5)
+
+// plusFive(2) 
+
+
+// function outter(num) {
+//     return function (numTwo) {
+//         console.log(num, numTwo)
+//     }
+// }
+
+// let inner = outter(5);  // returns a function
+
+// inner(10); // print 5, 10
+
+
+// function counter() {
+//     let count = 0;
+
+//     return {
+//         print: function () {
+//             console.log(count)
+//         }
+//     }
+// }
+
+// let counterOne = counter();
+// counterOne.print() // 0
+
+// let funct = function(){
+//     console.log("test")
+// }
+
+// funct(); 
+
+// plusFive(2);
+// plusFive(-8);
+
 
 // makePlusFunction(10);
 // makePlusFunction(5)
