@@ -27,54 +27,43 @@ asciiCapitalize("Oh what a beautiful morning.")    ➞    "oH wHaT a BeauTiFuL m
 
 */
 
-// the below works for 1 character, need to do whold phrase
-// let capPhrase = phrase.charCodeAt(phrase);
 
-//  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
-
-//  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
-// function asciiCapitalize(phrase) {
-//     // create empty array
-//     let charCodeArr = [];
-//     // loop through phrase string
-//     for (let asciChar of phrase) {
-
-//         // let capPhrase = phrase.charCodeAt(phrase);
-//         // console.log('capPhrase:', capPhrase);
-//         let makeCaps = phrase.charCodeAt(asciChar);
-//         console.log('makeCaps:', makeCaps)
-//         charCodeArr.push(makeCaps);
-//         console.log('charCodeArr:', charCodeArr)
-
-//         // return the array charCodeArr
-//         return charCodeArr;
-//         // check for even/odd
-
-//         // push onto array
-
-
-
-//     }
-// }
 
 function asciiCapitalize(passedString) {
     // empty array
-    let charCodeArr = [];
-
+    let characterArray = [];
+    // loop through passedString
     for (let i = 0; i < passedString.length; i++) {
-        let asciChar = passedString.charCodeAt(i);
-        console.log('asciChar:', asciChar);
-        charCodeArr.push(asciChar);
+        let asciiCharacter = passedString.charCodeAt(i);
+        if ((asciiCharacter % 2) == 0) {
+            // console.log(`asciiCharacter ${asciiCharacter} is even`)
+            // even caps ASCII is + 32 more than
+            asciiCharacter = (asciiCharacter + 32);
+            // push to array
+            characterArray.push(asciiCharacter);
+        }
+        else {
+            // console.log("The number " + asciiCharacter + " is odd")
+            // do not change value
+            // push to array
+            characterArray.push(asciiCharacter);
+        }
     }
+
+    console.log(characterArray);
+    // console.log('characterArray:', characterArray)
+    // let char = String.fromCharCode(characterArray);
+    // let char = JSON.stringify(characterArray);
+    // let stringify = String.fromCharCode(char);
+    // console.log('stringify:', stringify)
     // return the array 
-    return charCodeArr;
+    return String.fromCharCode(characterArray);
 }
 
-asciiCapitalize("to be or not to be.");
 
 
-// loop through the string
-// compare is even/odd(caps)/(lower)
+
+
 
 
 
@@ -82,3 +71,4 @@ asciiCapitalize("to be or not to be.");
 //  +++++++++++++++++++ EVENT LISTENERS +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTION CALLS +++++++++++++++++++
+asciiCapitalize("to be or not to be.");
