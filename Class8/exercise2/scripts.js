@@ -2,7 +2,8 @@ console.log("The scripts.js file is loaded.");
 /*
 
     What is the initial goal of this file?
-      Create a function that takes a string as input, capitalizes a letter if its ASCII code is even, and returns its lower case version if its ASCII code is odd.
+
+**Aim**: Create a function that takes a string as input, capitalizes a letter if its ASCII code is even, and returns its lower case version if its ASCII code is odd.
 
     What is the version of this file?
         1.0
@@ -12,36 +13,40 @@ console.log("The scripts.js file is loaded.");
 */
 
 
-//  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
 
-//  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
 function asciiCapitalize(passedString) {
-    // create empty array
-    // remember me - creating an array from
-    const characterArray = [];
-    const map = Array.prototype.map
+    // empty array
+    let characterArray = [];
+    // loop through passedString
+    for (let i = 0; i < passedString.length; i++) {
+        let asciiCharacter = passedString.charCodeAt(i);
+        if ((asciiCharacter % 2) == 0) {
+            // is even - make upper
+            console.log(asciiCharacter.toUpperCase);
+            characterArray.push(asciiCharacter.toUpperCase);
+        }
+        else {
+            // is odd - make lower
+            // push to array
+            characterArray.push(asciiCharacter.toLowerCase);
+        }
+    }
+    // console.log(String.fromCharCode.apply(null, characterArray));
 
-    const newString = map.call(passedString, asciiCharacter => {
-        return `${asciiCharacter}`
-    })
+    finalArr = characterArray.join("");
+    console.log('finalArr:', finalArr)
 
-    console.log(newString)
+    // console.log('characterArray:', characterArray)
+    // let char = String.fromCharCode(characterArray);
 
-    // return characterArray;
 
+    // return the array 
+    return characterArray;
 }
 
-
-// console.log(Boolean('blah') && Boolean('')); // false
 //  +++++++++++++++++++ EVENT LISTENERS +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTION CALLS +++++++++++++++++++
-
-asciiCapitalize("ABCTo be or not to be!");
-//   "To Be oR NoT To Be!"
-
+asciiCapitalize("to be or not to be.");
 asciiCapitalize("THE LITTLE MERMAID");
-// // "THe LiTTLe meRmaiD"
-
-asciiCapitalize("Oh what a beautiful morning.");
-// //   ➞    "oH wHaT a BeauTiFuL moRNiNg."
+asciiCapitalize("Oh what a beautiful morning.")
