@@ -36,6 +36,7 @@ The maximum time to complete the interview includes a buffer time of 20 minutes.
 //  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++
 
 //  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++ 
+
 function interview(questionArray, interviewTime) {
     // total time and number of answers
     if ((interviewTime > 120) || (questionArray.length < 8)) return "disqualified";
