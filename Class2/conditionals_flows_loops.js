@@ -80,14 +80,25 @@ console.groupEnd();
 //             { name: 'chance', type: 'bernese' }
 //         ];
 
-console.groupCollapsed("For Of Inerator")
-for (let dog of dogs) {
-    // grab the dog
-    const dogData = document.createElement('div');
-    dogData.classList.add('jumbotron', 'text-center');
-    dogData.innerText = `${dog.name} is a ${dog.type}`;
-    dogsList.appendChild(dogData);
+// console.groupCollapsed("For Of Inerator")
+// for (let dog of dogs) {
+//     // grab the dog
+//     const dogData = document.createElement('div');
+//     dogData.classList.add('jumbotron', 'text-center');
+//     dogData.innerText = `${dog.name} is a ${dog.type}`;
+//     dogsList.appendChild(dogData);
 
 
-    //     }
-    console.groupEnd();
+//     //     }
+//     console.groupEnd();
+
+
+// "if" statement
+if (username === "scottoncode") {
+    console.log("ScottonCode is logged in!");
+} else if (username === "CodeCoachWill") {
+    console.log("ScottonCode is logged in!");
+} else {
+    console.log("Invalid Credentials");
+
+}

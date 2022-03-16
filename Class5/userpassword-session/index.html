@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ere</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <!-- **Aim**: 
+        Create an application that prints out users information on submission of a form and saves the results to local storage -->
+
+        <div class="container">
+            <form>
+                <div class="boxes">
+                    <input
+                        type="text"
+                        class="username"
+                        id="username"
+                        placeholder="Type a username."
+                    />
+
+                    <input
+                        type="password"
+                        class="password"
+                        id="password"
+                        autocomplete="off"
+                        placeholder="Type a password."
+                    />
+                </div>
+                <div class="sub">
+                    <input
+                        id="submitter"
+                        class="btn submitter"
+                        type="button"
+                        value="submit"
+                        onclick="saveLocal()"
+                    />
+                </div>
+            </form>
+            <!-- below should show js generated html -->
+            <div class="showsub" id="showsub"></div>
+        </div>
+        <script src="./index.js"></script>
+    </body>
+</html>
