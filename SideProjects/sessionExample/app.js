@@ -7,7 +7,7 @@ const form = document.querySelector("#link-form");
 const linkList = document.querySelector(".link-list");
 
 // * ========== Global Variables ========== * \\
-const allLinks = JSON.parse(localStorage.getItem("link_list")) || [];
+const allLinks = JSON.parse(sessionStorage.getItem("link_list")) || [];
 
 const BASE_URL = "https://opengraph.io/api/1.1/site";
 const API_KEY = "fdcc299a-6adc-43d0-ac90-1674c1cbadf5";
@@ -41,8 +41,8 @@ async function createLink(e) {
   // Repopulate HTML List
   populateLinkList(allLinks);
 
-  // Save List to Local Storage
-  saveLinkListToLocalStorage(allLinks);
+  // Save List to Session Storage
+  saveLinkListToSessionStorage(allLinks);
 
   // Reset the input box
   form.reset();
@@ -64,8 +64,8 @@ function removeLink(e) {
   // refill the list
   populateLinkList(allLinks);
 
-  // save to local storage
-  saveLinkListToLocalStorage(allLinks);
+  // save to session storage
+  saveLinkListToSessionStorage(allLinks);
 }
 
 // FUNCTION: Populates HTML with a list of Bookmarks
@@ -82,8 +82,8 @@ function populateLinkList(links = []) {
     .join("");
 }
 
-// FUNCTION: Saves Link List in Local Storage
-function saveLinkListToLocalStorage(links = []) {
+// FUNCTION: Saves Link List in Session Storage
+function saveLinkListToSessionStorage(links = []) {
   localStorage.setItem("link_list", JSON.stringify(links));
 }
 
