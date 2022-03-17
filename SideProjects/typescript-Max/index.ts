@@ -11,22 +11,6 @@ console.log("The scripts.js file is loaded.");
 
 */
 
-let age: Number;
-
-age = 12;
-
-let userName: string;
-
-userName = "Max";
-
-let isInstructor: boolean;
-isInstructor = true;
-
-// More complex types
-
-let hobbies: string[];
-
-hobbies = ["Sports", "Cooking"];
 
 //  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++  \\
 
