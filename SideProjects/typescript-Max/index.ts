@@ -1,21 +1,43 @@
 console.log("The scripts.js file is loaded.");
-/*
+let age: number;
 
-    What is the initial goal of this file?
-        to learn about ...
+age = 12;
 
-    What is the version of this file?
-        1.0
+let userName: string;
 
-    If the version is > 1 , has the goal changed? Explain. Why are we here again?
+userName = "Max";
 
-*/
+let isInstructor: boolean;
 
+isInstructor = true;
 
-//  +++++++++++++++++++ GET DOM, SET VARIABLES   +++++++++++++++++++  \\
+// More complex types
+let hobbies: string[];
 
-//  +++++++++++++++++++ FUNCTIONS +++++++++++++++++++   \\
+hobbies = ["Sports", "Cooking"];
 
-//  +++++++++++++++++++ EVENT LISTENERS +++++++++++++++++++  \\
+// type alias
+type Person = {
+    name: string;
+    age: number;
+};
 
-//  +++++++++++++++++++ FUNCTION CALLS +++++++++++++++++++  \\
+let person: Person;
+
+person = {
+    name: "Max",
+    age: 32,
+};
+
+// this is not allowed, because it violates the person definition
+// person = {
+//     isEmployee: true
+// }
+
+let people: Person[];
+
+// Type inference - embrace inference, use it when possible
+
+let course: string | number = "React - The complete guide";
+
+course = 12341;
