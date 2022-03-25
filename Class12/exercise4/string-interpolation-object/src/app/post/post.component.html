@@ -1,4 +1,9 @@
 <p>post works!</p>
-<p>{{ info }}</p>
+<!-- <p>{{ info }}</p> -->
 
-<!-- {{ [info] }} -->
+<!-- info: object = { firstName: 'Joe', lastName: 'Blow' }; -->
+
+<pre>{{ info | json }}</pre>
+
+<div>Id: {{ info.firstName }}</div>
+<div>Name: {{ info.lastName }}</div>
