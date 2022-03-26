@@ -1,0 +1,9 @@
+<!-- remember me - ngIf elseBlock is commented out, but works. Couldn't get the ngIf to work -->
+<!-- <div>*ngIf="loggedIn=true" ? "I am logged in!"" : "I am logged out!"</div> -->
+
+<!-- <div *ngIf="'loggedIn = true'; else elseBlock">I am logged in!</div>
+
+<ng-template #elseBlock>I am logged out!</ng-template> -->
+<!-- remember me - using the ternary operator to dynamically output content. -->
+
+<div>{{ loggedIn === true ? "I am logged in!" : "I am logged out!" }}</div>
