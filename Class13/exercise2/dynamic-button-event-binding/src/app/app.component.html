@@ -1,0 +1,5 @@
+<input type="text" [disabled]="isDisabled" />
+<!-- remember me - how to easily change a boolean -->
+<button (click)="isDisabled = !isDisabled" class="btn">
+  Click me to change the value of isDisabled
+</button>
