@@ -1,0 +1,5 @@
+<input type="text" [disabled]="isDisabled" />
+
+<button (click)="!(isDisabled = isDisabled)" class="btn">
+  Click me to change the value of isDisabled
+</button>
