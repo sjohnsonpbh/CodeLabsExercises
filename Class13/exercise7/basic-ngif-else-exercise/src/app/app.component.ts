@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'header';
+  isShowContent: boolean = true;
+
+  toggleDisplay() {
+    this.isShowContent = !this.isShowContent;
+  }
 }

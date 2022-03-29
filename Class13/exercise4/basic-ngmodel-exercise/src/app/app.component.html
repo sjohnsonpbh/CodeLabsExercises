@@ -1,3 +1,6 @@
 <h1>{{ title }}</h1>
 
+<!-- remember me - Use ngModel to dynamically change
+  the value of an instance property
+NOTE: you must import the FormsModule in the file app.module.ts or this does not work -->
 <input type="text" class="form-control" [(ngModel)]="title" />

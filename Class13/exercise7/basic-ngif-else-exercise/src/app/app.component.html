@@ -1,0 +1,13 @@
+<!-- remember me - this is *ngIf using a template, the exercise is to do this with a p tag -->
+
+<!-- <ng-template [ngIf]="isShowContent" [ngIfElse]="elseBlock">
+  If isShowContent is true, show me!
+</ng-template>
+<ng-template #elseBlock> Use else to show me! </ng-template> -->
+<!-- end  <ng-template> example -->
+
+<p *ngIf="isShowContent; else showContent">
+  If isShowContent is true, show me!
+</p>
+<ng-template #showContent> Use else to show me! </ng-template>
+<button (click)="toggleDisplay()">Toggle me</button>

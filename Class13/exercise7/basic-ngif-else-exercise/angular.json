@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "input-event-binding-exercise": {
+    "basic-ngif-else-exercise": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -41,7 +41,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/input-event-binding-exercise",
+            "outputPath": "dist/basic-ngif-else-exercise",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -92,10 +92,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "input-event-binding-exercise:build:production"
+              "browserTarget": "basic-ngif-else-exercise:build:production"
             },
             "development": {
-              "browserTarget": "input-event-binding-exercise:build:development"
+              "browserTarget": "basic-ngif-else-exercise:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +103,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "input-event-binding-exercise:build"
+            "browserTarget": "basic-ngif-else-exercise:build"
           }
         },
         "test": {
@@ -126,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "input-event-binding-exercise"
+  "defaultProject": "basic-ngif-else-exercise"
 }

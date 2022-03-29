@@ -52,7 +52,7 @@ console.log(myArr.join('-')); // chris-nick-holly -- pass in something to sepera
 console.log(myArr.push('ado'), myArr)
 console.log(myArr.pop(), myArr); // do not have to pass anything in, just removes last array item 
 
-// remember me arrow function example below
+// remember me - arrow function example below
 
 // myArr.forEach(function (user) {
 //     console.log(user);

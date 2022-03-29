@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'header';
+  title = 'basic-event-binding-exercise';
+  createLog() {
+    console.log('you have been logged!');
+  }
 }
