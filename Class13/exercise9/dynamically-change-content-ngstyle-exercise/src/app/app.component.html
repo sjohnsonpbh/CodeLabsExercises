@@ -1,0 +1,9 @@
+<!-- remember me - using property binding to change background-color in a input textbox -->
+
+<label for="input">Type a color name:</label>
+
+<input
+  [value]="changeColor"
+  (input)="changeColor = $event.target.value"
+  [style.background-color]="changeColor"
+/>
