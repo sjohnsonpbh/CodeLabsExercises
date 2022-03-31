@@ -3,9 +3,14 @@
 // for this component, just uses normal <div> and <p> tags -
 
 import {
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
   Component,
+  DoCheck,
   Input,
   OnChanges,
+  OnDestroy,
   OnInit,
   SimpleChanges,
   ViewEncapsulation,
@@ -17,7 +22,16 @@ import {
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated, // None, Shadowdom
 })
-export class ServerElementComponent implements OnInit, OnChanges {
+export class ServerElementComponent
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy
+{
   // remember me - binding a child element to it's parent
   // here it is binding to the element, we add @Input() to expose it - this is binding to custom properties
   @Input('srvElement') element: { type: string; name: string; content: string };
@@ -33,5 +47,23 @@ export class ServerElementComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     console.log('ngOnInit called!');
+  }
+  ngDoCheck() {
+    console.log('ngDoCheck called!');
+  }
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit called!');
+  }
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked called!');
+  }
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit called!');
+  }
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked called!');
+  }
+  ngonDestroy() {
+    console.log('ngOnDestroy called');
   }
 }
