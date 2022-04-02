@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+    <!--<input type="text" class="form-control" [(ngModel)]="newServerName">
+    this was initially setup using ngModel and two way binding-->
+
+    <!-- now we are using a local reference #serverNameInput and  #serverContentInput to "name" a HTML element, and pass it's value
+      using (click) from cockpit component to the app component -->
+    <input type="text" class="form-control" #serverNameInput />
+    <label>Server Content</label>
+    <!--<input type="text" class="form-control" [(ngModel)]="newServerContent">-->
+    <input type="text" class="form-control" #serverContentInput />
+    <br />
+    <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">
+      Add Server
+    </button>
+    <button class="btn btn-primary" (click)="onAddBlueprint(serverNameInput)">
+      Add Server Blueprint
+    </button>
+  </div>
+</div>
