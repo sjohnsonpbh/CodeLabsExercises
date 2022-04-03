@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @Input() myPosts: string[] = ['post1', 'post2', 'post3', 'post4', 'post5'];
+  myPosts: string[] = ['post1', 'post2', 'post3', 'post4', 'post5'];
 }

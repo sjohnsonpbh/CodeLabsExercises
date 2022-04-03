@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
-  @Output() newPosts = new EventEmitter<string>();
+  @Output() newPosts = new EventEmitter();
 
   constructor() {}
 

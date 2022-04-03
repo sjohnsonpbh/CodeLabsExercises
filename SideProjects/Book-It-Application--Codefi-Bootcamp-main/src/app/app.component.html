@@ -1,0 +1,11 @@
+<div class="container">
+  <app-navbar (currPage)="onChangePage($event)"></app-navbar>
+
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <app-bookshelf *ngIf="selectedPage === 'bookshelf'"></app-bookshelf>
+
+      <app-library *ngIf="selectedPage === 'library'"></app-library>
+    </div>
+  </div>
+</div>
