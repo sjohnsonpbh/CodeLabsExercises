@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
@@ -6,8 +6,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
-  @Input() myPostsEvent = new EventEmitter();
-
+  @Input() myPosts = [];
   constructor() {}
 
   ngOnInit(): void {}
