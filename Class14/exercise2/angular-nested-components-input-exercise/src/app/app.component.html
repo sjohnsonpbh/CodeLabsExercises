@@ -1,2 +1,4 @@
-<!-- the app component is the parent to my-profile -->
-<app-my-profile [parentData]="data" [data]="data"></app-my-profile>
+<!-- app component is the parent -->
+<app-my-profile>
+  <app-posts></app-posts>
+</app-my-profile>

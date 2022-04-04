@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  myPosts: string[] = ['post1', 'post2', 'post3', 'post4', 'post5'];
+  myPosts: string[] = ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5'];
 }
