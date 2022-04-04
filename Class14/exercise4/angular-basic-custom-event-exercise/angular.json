@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "input-and-output-demo": {
+    "angular-basic-custom-event-exercise": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -41,7 +41,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/input-and-output-demo",
+            "outputPath": "dist/angular-basic-custom-event-exercise",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -92,10 +92,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "input-and-output-demo:build:production"
+              "browserTarget": "angular-basic-custom-event-exercise:build:production"
             },
             "development": {
-              "browserTarget": "input-and-output-demo:build:development"
+              "browserTarget": "angular-basic-custom-event-exercise:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +103,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "input-and-output-demo:build"
+            "browserTarget": "angular-basic-custom-event-exercise:build"
           }
         },
         "test": {
@@ -126,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "input-and-output-demo"
+  "defaultProject": "angular-basic-custom-event-exercise"
 }
