@@ -1,3 +1,9 @@
-<input name="mySearch" />
+<!-- <input name="mySearch" /> -->
+<input
+  name="mySearch"
+  type="text"
+  class="form-control"
+  [(ngModel)]="mySearch"
+/>
 
-<button (click)="onSearchClick(mySearch)">Search</button>
+<button (click)="onSearchClick()">Search</button>

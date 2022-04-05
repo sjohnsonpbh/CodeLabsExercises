@@ -1,1 +1,6 @@
-<app-navbar (mySearch)="(outputSearch)"></app-navbar>
+<app-navbar (searchEmitter)="onSearch($event)"></app-navbar>
+
+<p>{{ appSearch }}</p>
+<!-- <app-navbar (searchEmitter)="mySearch = $event"></app-navbar> -->
+
+<!-- <button (click)="onMethod()"></button> -->
