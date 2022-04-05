@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/*  remember me - bootstrap had to import bootstrap here, not working in other import */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.boxdiv {
+  align-self: center;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 20px;
+  width: 200px;
+}
