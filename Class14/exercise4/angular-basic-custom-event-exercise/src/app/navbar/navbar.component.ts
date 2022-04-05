@@ -1,3 +1,6 @@
+// remember me - Use a custom event to pass information
+// to the parent component.
+
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -9,6 +12,7 @@ export class NavbarComponent implements OnInit {
   @Output() searchEmitter = new EventEmitter<string>();
 
   mySearch: string;
+
   constructor() {}
 
   ngOnInit(): void {}
