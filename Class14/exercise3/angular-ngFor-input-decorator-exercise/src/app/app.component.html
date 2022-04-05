@@ -1,9 +1,17 @@
 <div class="container"><h1>List of Users</h1></div>
 <div class="container">
   <div class="row">
+    <!-- remember me - ngFor technique passing down one user from an array -->
     <!-- ngFor goes here, pass one user -->
-    <div class="boxdiv">
-      <app-user *ngFor="let user of users"></app-user>
+    <div class="boxspace">
+      <app-user *ngFor="let user of users" [passedUser]="user"></app-user>
+      <!-- <div *ngFor="let user of users">
+        <app-user [passedUser] = "user"></app-user>
+      </div> -->
     </div>
+
+    <!-- <app-user [passedUser]="{ id: 3, username: 'johndoe123' }"></app-user> -->
   </div>
 </div>
+
+<!-- <app-user [userPassed] = "users"></app-user> -->
