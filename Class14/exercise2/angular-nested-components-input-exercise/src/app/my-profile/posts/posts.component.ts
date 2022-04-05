@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
-  @Input() myPosts = [];
+  @Input() myPosts: string[] = [];
   constructor() {}
 
   ngOnInit(): void {}
