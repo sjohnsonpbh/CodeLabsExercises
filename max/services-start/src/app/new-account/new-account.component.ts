@@ -2,6 +2,7 @@
 // see the constructor , the providers: in @Component and the logging.service file
 
 import { Component, EventEmitter, Output } from "@angular/core";
+import { errorMonitor } from "events";
 import { AccountsService } from "../accounts.service";
 import { LoggingService } from "../logging.service";
 
@@ -17,7 +18,11 @@ export class NewAccountComponent {
   constructor(
     private loggingService: LoggingService,
     private accountsService: AccountsService
-  ) {}
+  ) {
+    this.accountsService.statusUpdated.subscribe((status: string) =>
+      alert("New Status: " + status)
+    );
+  }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
