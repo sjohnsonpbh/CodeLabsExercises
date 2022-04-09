@@ -2,7 +2,6 @@
 // see the constructor , the providers: in @Component and the logging.service file
 
 import { Component, EventEmitter, Output } from "@angular/core";
-import { errorMonitor } from "events";
 import { AccountsService } from "../accounts.service";
 import { LoggingService } from "../logging.service";
 
