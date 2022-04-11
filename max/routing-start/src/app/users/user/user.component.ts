@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 
 @Component({
   selector: "app-user",
@@ -11,10 +11,16 @@ export class UserComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
+  // remember me -  Fetching Route Parameters Reactively
+  // when the url parameters need to update the page data
   ngOnInit() {
     this.user = {
       id: this.route.snapshot.params["id"],
       name: this.route.snapshot.params["name"],
     };
+    this.route.params.subscribe((params: Params) => {
+      this.user.id = params["id"];
+      this.user.name = params["name"];
+    });
   }
 }
