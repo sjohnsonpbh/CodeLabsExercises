@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DinnerCalendarComponent } from './dinner-calendar/dinner-calendar.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { RecipeComponent } from './recipe/recipe.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DinnerCalendarComponent,
     CalendarComponent,
-    RecipeComponent
+    RecipeListComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
