@@ -11,6 +11,7 @@ import { EditServerComponent } from "./servers/edit-server/edit-server.component
 import { ServerComponent } from "./servers/server/server.component";
 import { ServersService } from "./servers/servers.service";
 import { RouterModule, Routes } from "@angular/router";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 // remember me - createing Routes
 const appRoutes: Routes = [
@@ -29,6 +30,10 @@ const appRoutes: Routes = [
       { path: ":id/edit", component: EditServerComponent },
     ],
   },
+  { path: "not-found", component: PageNotFoundComponent },
+  { path: "**", redirectTo: "not-found" }, // remember me - 404 error
+  // - ** is a wildcard
+  // this must be the last line of the list, they are evaluated top to bottom
 ];
 
 @NgModule({
@@ -40,6 +45,7 @@ const appRoutes: Routes = [
     UserComponent,
     EditServerComponent,
     ServerComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
