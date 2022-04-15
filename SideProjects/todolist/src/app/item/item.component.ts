@@ -9,6 +9,8 @@ import { Item } from '../item.model';
   styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit, Item {
+  editable = false;
+
   @Input() item: Item;
   @Input() newItem: string;
   @Output() remove = new Subject<Item>();
@@ -17,7 +19,12 @@ export class ItemComponent implements OnInit, Item {
 
   info: string;
   completed: boolean;
-  editable = false;
 
   ngOnInit(): void {}
+
+  saveItem(info) {
+    if (!info) return;
+    this.editable = false;
+    this.item.info = info;
+  }
 }

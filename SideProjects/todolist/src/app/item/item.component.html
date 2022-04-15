@@ -1,19 +1,19 @@
-<!-- <div class="item">
-  <input
-    [id]="Item.description"
+<div class="item">
+  <!-- <input
+    [id]="Item.info"
     type="checkbox"
     (change)="item.done = !item.done"
     [checked]="item.done"
-  />
-  <label [for]="item.description">{{ item.info }}</label>
+  /> -->
+  <label [for]="item.info">{{ item.info }}</label>
 
   <div class="btn-wrapper" *ngIf="!editable">
     <button class="btn" (click)="editable = !editable">Edit</button>
     <button class="btn btn-warn" (click)="remove.emit()">Delete</button>
-  </div> -->
+  </div>
 
-<!-- This section shows only if user clicks Edit button -->
-<!-- <div *ngIf="editable">
+  <!-- This section shows only if user clicks Edit button -->
+  <div *ngIf="editable">
     <input
       class="sm-text-input"
       placeholder="edit item"
@@ -29,4 +29,4 @@
       </button>
     </div>
   </div>
-</div> -->
+</div>
