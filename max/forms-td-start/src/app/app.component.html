@@ -60,6 +60,12 @@
           <!-- remember me - ngModel and Two way binding on answer property -->
         </div>
         <p>Your reply: {{ answer }}</p>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" name="gender" [value]="gender" required />
+            {{ gender }}
+          </label>
+        </div>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
         </button>
