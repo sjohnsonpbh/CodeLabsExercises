@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <!-- remember me - Form - using ngSubmig to submit a form -->
+      <!-- remember me - Form - using ngSubmit to submit a form -->
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div id="user-data">
           <div class="form-group">
@@ -37,6 +37,8 @@
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
+          <!-- remember me - Default form value - binding to ngModel
+          value is set in typescript file -->
           <select
             id="secret"
             class="form-control"
@@ -47,6 +49,16 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-group">
+          <textarea
+            name="questionAnswer"
+            rows="3"
+            class="form-control"
+            [(ngModel)]="answer"
+          ></textarea>
+          <!-- remember me - Two way binding on answer property -->
+        </div>
+        <p>Your reply: {{ answer }}</p>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
         </button>
