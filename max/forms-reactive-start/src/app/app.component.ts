@@ -3,7 +3,13 @@ import {
   OnInit,
   ɵCodegenComponentFactoryResolver,
 } from "@angular/core";
-import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
+import {
+  FormArray,
+  FormControl,
+  FormGroup,
+  MaxLengthValidator,
+  Validators,
+} from "@angular/forms";
 import { Observable } from "rxjs";
 
 @Component({
@@ -35,9 +41,19 @@ export class AppComponent implements OnInit {
     // remember me - reacting to each change in the form
     // this.signupForm.valueChanges.subscribe((value) => console.log(value));
     this.signupForm.statusChanges.subscribe((value) => console.log(status));
+
+    this.signupForm.setValue({
+      userData: {
+        username: "Max",
+        email: "max@test.com",
+      },
+      gender: "male",
+      hobbies: [],
+    });
   }
   onSubmit() {
     console.log(this.signupForm);
+    this.signupForm.reset();
   }
   getControls() {
     return (<FormArray>this.signupForm.get("hobbies")).controls;
