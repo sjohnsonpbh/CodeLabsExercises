@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-root",
@@ -17,9 +17,19 @@ export class AppComponent implements OnInit {
         email: new FormControl(null, [Validators.required, Validators.email]),
       }),
       gender: new FormControl("male"),
+      hobbies: new FormArray([]),
     });
   }
   onSubmit() {
     console.log(this.signupForm);
+  }
+  getControls() {
+    return (<FormArray>this.signupForm.get("hobbies")).controls;
+  }
+  // remember me -   Reactive: Arrays of Form Controls (FormArray)
+  //  you have to "cast" the control to make this work
+  onAddHobby() {
+    const control = new FormControl(null, Validators.required);
+    (<FormArray>this.signupForm.get("hobbies")).push(control);
   }
 }
