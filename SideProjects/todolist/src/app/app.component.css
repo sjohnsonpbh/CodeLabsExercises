@@ -54,3 +54,9 @@ ul {
 ul li {
   list-style: none;
 }
+
+button {
+  padding: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

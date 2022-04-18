@@ -6,18 +6,31 @@
       <input
         #newItem
         placeholder="to-do list item"
-        (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+        (keyup.enter)="createItem(newItem.value); newItem.value = ''"
         class="lg-text-input"
         id="addItemInput"
       />
 
-      <button class="btn btn-primary" (click)="addItem(newItem.value)">
+      <button
+        class="btn btn-primary btn-sm"
+        (click)="createItem(newItem.value)"
+      >
         Add
       </button>
+      <hr />
       <ul>
-        <li *ngFor="let item of allItems">
-          {{ item.info }}
+        <!-- remember me - adding an index to *ngFor -->
+        <li *ngFor="let item of allItems; index as i">
+          <button class="btn btn-secondary btn-sm" (click)="updateItem(i)">
+            update
+          </button>
+          <button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">
+            delete
+          </button>
+
+          <strong> {{ item.info }}</strong>
           / completed = {{ item.completed }}
+          <!-- {{ i }} -->
         </li>
       </ul>
     </div>
