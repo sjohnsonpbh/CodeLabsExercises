@@ -30,7 +30,8 @@
           <div class="col-xs-12">
             <!-- remember me - disable button until form is valid -->
             <button class="btn btn-success" type="submit" [disabled]="!f.valid">
-              Add
+              <!-- remember me change button name based on mode - a ternary expression -->
+              {{ editMode ? "Update" : "Add" }}
             </button>
             <button class="btn btn-danger" type="button">Delete</button>
             <button class="btn btn-primary" type="button">Clear</button>
