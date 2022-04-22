@@ -6,6 +6,9 @@
       <button class="btn btn-primary" (click)="onAddServer()">
         Add Server
       </button>
+      <br /><br />
+      <!-- remember me - async pipe shows up after two seconds -->
+      <h3>App Status: {{ appStatus | async }}</h3>
       <ul class="list-group">
         <li
           class="list-group-item"
