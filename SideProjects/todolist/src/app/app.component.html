@@ -2,37 +2,52 @@
   <div class="row">
     <div class="col-xs-12">
       <label for="addItemInput">What would you like to do today?</label>
+      <form (ngSubmit)="createItem(newItem.value)" #itemForm="ngForm">
+        <input
+          #newItem
+          placeholder="Type a to-do list item here!"
+          (keyup.enter)="createItem(newItem.value); newItem.value = ''"
+          class="lg-text-input"
+          id="addItemInput"
+        />
 
-      <input
-        #newItem
-        placeholder="to-do list item"
-        (keyup.enter)="createItem(newItem.value); newItem.value = ''"
-        class="lg-text-input"
-        id="addItemInput"
-      />
-
-      <button
-        class="btn btn-primary btn-sm"
-        (click)="createItem(newItem.value)"
-      >
-        Add
-      </button>
-      <hr />
-      <ul>
-        <!-- remember me - adding an index to *ngFor -->
-        <li *ngFor="let item of allItems; index as i">
-          <button class="btn btn-secondary btn-sm" (click)="updateItem(i)">
-            update
-          </button>
-          <button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">
-            delete
-          </button>
-
-          <strong> {{ item.info }}</strong>
-          / completed = {{ item.completed }}
-          <!-- {{ i }} -->
-        </li>
-      </ul>
+        <button
+          class="btn btn-primary btn-sm"
+          (click)="createItem(newItem.value)"
+          [disabled]="!newItem.value === ''"
+        >
+          Add
+        </button>
+      </form>
     </div>
+    <hr />
+
+    <ul>
+      <!-- remember me - adding an index to *ngFor -->
+
+      <li *ngFor="let item of allItems; index as i">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-secondary btn-sm" (click)="updateItem(i)">
+                update
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">
+                delete
+              </button>
+            </div>
+            <div class="col">
+              <strong> {{ item.info }}</strong>
+            </div>
+            <!-- <div class="col">/ completed = {{ item.completed }}</div> -->
+            <div class="col">
+              {{ item.completed === true ? "completed" : "not completed" }}
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
