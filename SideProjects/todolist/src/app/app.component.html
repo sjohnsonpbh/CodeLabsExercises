@@ -2,19 +2,20 @@
   <div class="row">
     <div class="col-xs-12">
       <label for="addItemInput">What would you like to do today?</label>
-      <form (ngSubmit)="createItem(newItem.value)" #itemForm="ngForm">
+      <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
         <input
           #newItem
-          placeholder="Type a to-do list item here!"
-          (keyup.enter)="createItem(newItem.value); newItem.value = ''"
+          placeholder="Type a to-do list item here"
           class="lg-text-input"
           id="addItemInput"
+          name="addItemInput"
+          formControlName="addItemInput"
         />
 
         <button
+          type="submit"
           class="btn btn-primary btn-sm"
-          (click)="createItem(newItem.value)"
-          [disabled]="!newItem.value === ''"
+          [disabled]="!todoForm.valid"
         >
           Add
         </button>
