@@ -1,8 +1,13 @@
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import {
+  HttpClient,
+  HttpEventType,
+  HttpHeaders,
+  HttpParams,
+} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Post } from "./post.model";
-import { catchError, map } from "rxjs/operators";
-import { Subject, throwError } from "rxjs";
+import { catchError, map, tap } from "rxjs/operators";
+import { pipe, Subject, throwError } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -14,7 +19,10 @@ export class PostsService {
     this.http
       .post<{ name: string }>(
         "https://ng-complete-guide-9ac16-default-rtdb.firebaseio.com/posts.json",
-        postData
+        postData,
+        {
+          observe: "response",
+        }
       )
       .subscribe(
         (responseData) => {
@@ -26,6 +34,7 @@ export class PostsService {
       );
   }
   // remember me - setting custom Headers for Http get method
+  // adding query parameters to the url
   fetchPosts() {
     let searchParams = new HttpParams();
     searchParams = searchParams.append("print", "pretty");
@@ -57,8 +66,20 @@ export class PostsService {
   }
 
   deletePosts() {
-    return this.http.delete(
-      "https://ng-complete-guide-9ac16-default-rtdb.firebaseio.com/posts.json"
-    );
+    return this.http
+      .delete(
+        "https://ng-complete-guide-9ac16-default-rtdb.firebaseio.com/posts.json",
+        {
+          observe: "events",
+        }
+      )
+      .pipe(
+        tap((event) => {
+          console.log(event);
+          if (event.type === HttpEventType.Response) {
+            console.log(event.body);
+          }
+        })
+      );
   }
 }
