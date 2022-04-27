@@ -46,6 +46,7 @@ export class PostsService {
         {
           headers: new HttpHeaders({ "Custom-Header": "Hello" }),
           params: searchParams,
+          responseType: "json",
         }
       )
       .pipe(
@@ -71,11 +72,15 @@ export class PostsService {
         "https://ng-complete-guide-9ac16-default-rtdb.firebaseio.com/posts.json",
         {
           observe: "events",
+          responseType: "text",
         }
       )
       .pipe(
         tap((event) => {
           console.log(event);
+          if (event.type === HttpEventType.Sent) {
+            // show user something?
+          }
           if (event.type === HttpEventType.Response) {
             console.log(event.body);
           }
