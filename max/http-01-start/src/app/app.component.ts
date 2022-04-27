@@ -1,6 +1,6 @@
 // remember me -   Using Types with the HttpClient
 // create posts and get posts back from google firebase
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Post } from "./post.model";
