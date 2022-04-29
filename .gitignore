@@ -1,2 +1,3 @@
 node_modules
 src/app/auth/auth.service.ts
+max/recipe-app/src/app/auth/auth.service.ts
