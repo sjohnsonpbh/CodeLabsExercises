@@ -5,8 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropDownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +16,7 @@ import { AuthInterceptorService } from './auth/auth.interceptor.service';
 import { AlertComponent } from './alert/alert.component';
 import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
 import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 // remember me - @NgModule declarations array contains all the components,
 // directives, and custom pipes for our application
@@ -25,8 +24,6 @@ import { RecipesModule } from './recipes/recipes.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     DropDownDirective,
     AuthComponent,
     LoadingSpinnerComponent,
@@ -41,6 +38,7 @@ import { RecipesModule } from './recipes/recipes.module';
     AppRoutingModule,
     ReactiveFormsModule,
     RecipesModule,
+    ShoppingListModule,
   ],
   // remember me - Providers are added here, but can also be used in other
   // files by using { providedIn: 'root' }
