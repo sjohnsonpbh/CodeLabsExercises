@@ -70,7 +70,7 @@ export class AuthComponent {
       this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
     const hostViewContainerRef = this.alertHost.viewContainerRef; // remember me
     // this stores the viewContainerRef in a const
-    // the below line clears anything that was rendered here before, so we can create a component
+    // the below line clears anything that was rendered here before, so we can create a component with new values
     hostViewContainerRef.clear();
 
     hostViewContainerRef.createComponent(alertCmpFactory);
