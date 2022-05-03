@@ -24,6 +24,8 @@ import { AuthInterceptorService } from './auth/auth.interceptor.service';
 import { AlertComponent } from './alert/alert.component';
 import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
 
+// remember me - @NgModule declarations array contains all the components,
+// directives, and custom pipes for our application
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
     AlertComponent,
     PlaceHolderDirective,
   ],
+  // this allows you to add other modules with additional capabilities
   imports: [
     BrowserModule,
     FormsModule,
@@ -49,6 +52,8 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
     AppRoutingModule,
     ReactiveFormsModule,
   ],
+  // remember me - Providers are added here, but can also be used in other
+  // files by using { providedIn: 'root' }
   providers: [
     ShoppingListService,
     RecipeService,
@@ -59,6 +64,7 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
       multi: true,
     },
   ],
+  // remember me - this is needed to startup the app with a main component
   bootstrap: [AppComponent],
   // the below is not needed in Angular 9+
   entryComponents: [AlertComponent],
