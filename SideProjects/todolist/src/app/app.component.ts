@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +8,8 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   @ViewChild('todoForm', { static: false }) todoForm: NgForm;
+
+  addItemInput = '';
 
   allItems = [
     { info: 'wake up', completed: true },
@@ -16,12 +19,7 @@ export class AppComponent implements OnInit {
     { info: 'nap', completed: false },
   ];
 
-  ngOnInit() {
-    this.todoForm = new FormGroup({
-      addItemInput: new FormControl(null, [Validators.required]),
-      completed: new FormControl(null),
-    });
-  }
+  ngOnInit() {}
 
   createItem(info: string) {
     this.allItems.push({
@@ -38,10 +36,11 @@ export class AppComponent implements OnInit {
     alert('Delete ' + id);
   }
 
-  onSubmit() {
-    this.allItems.push({
-      addItemInput,
-      completed: false,
-    });
+  onSubmit(form: NgForm) {
+    console.log(this.todoForm);
+    // this.allItems.push({
+    //   todoForm.addItemInput,
+    //   completed: false,
+    // });
   }
 }

@@ -1,24 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <label for="addItemInput">What would you like to do today?</label>
-      <form (ngSubmit)="onSubmit()" todoForm="ngForm">
+      <form (ngSubmit)="onSubmit(todoForm)" #todoForm="ngForm">
+        <label for="addItemInput">What would you like to do today?</label>
         <input
-          #newItem
-          placeholder="Type a to-do list item here"
-          class="lg-text-input"
+          type="text"
           id="addItemInput"
+          class="lg-text-input"
+          ngModel
+          placeholder="Type a to-do list item here"
           name="addItemInput"
           formControlName="addItemInput"
+          required
         />
 
-        <button
-          type="submit"
-          class="btn btn-primary btn-sm"
-          [disabled]="!todoForm.valid"
-        >
-          Add
-        </button>
+        <button type="submit" class="btn btn-primary btn-sm">Add</button>
       </form>
     </div>
     <hr />
