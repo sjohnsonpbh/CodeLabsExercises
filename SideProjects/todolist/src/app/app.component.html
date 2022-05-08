@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <form (ngSubmit)="onSubmit(todoForm)" #todoForm="ngForm">
+      <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
         <label for="addItemInput">What would you like to do today?</label>
         <input
           type="text"
@@ -10,7 +10,6 @@
           ngModel
           placeholder="Type a to-do list item here"
           name="addItemInput"
-          formControlName="addItemInput"
           required
         />
 

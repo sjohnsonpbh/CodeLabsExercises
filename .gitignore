@@ -1,3 +1,7 @@
 node_modules
-src/app/auth/auth.service.ts
-max/recipe-app/src/app/auth/auth.service.ts
+max/recipe-app/src/environments/environment.prod.ts
+max/recipe-app/src/environments/environment.ts
+
+max/recipe-app/src/environments/environment.ts
+max/recipe-app/src/environments/environment.prod.ts
+max/recipe-app/src/environments/environment.ts

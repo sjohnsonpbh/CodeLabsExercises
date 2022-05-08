@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,15 @@ export class AppComponent implements OnInit {
   @ViewChild('todoForm', { static: false }) todoForm: NgForm;
 
   addItemInput = '';
+  addedItem = '';
+
+  startList = [
+    { info: 'wake up', completed: true },
+    { info: 'cook', completed: false },
+    { info: 'walk', completed: false },
+    { info: 'push-ups', completed: false },
+    { info: 'nap', completed: false },
+  ];
 
   allItems = [
     { info: 'wake up', completed: true },
@@ -19,27 +29,35 @@ export class AppComponent implements OnInit {
     { info: 'nap', completed: false },
   ];
 
-  ngOnInit() {}
+  router: any;
 
-  createItem(info: string) {
-    this.allItems.push({
-      info,
-      completed: false,
-    });
+  ngOnInit() {
+    let allItems = this.startList.slice();
   }
+
+  // createItem(info: string) {
+  //   this.allItems.push({
+  //     info,
+  //     completed: false,
+  //   });
+  // }
 
   updateItem(id: number) {
     alert('Update ' + id);
+    // add a textbox to right side of page
+    //
   }
 
   deleteItem(id: number) {
-    alert('Delete ' + id);
+    // delete allItems[id];
+    // this.router.navigate(['/']);
   }
 
-  onSubmit(form: NgForm) {
-    console.log(this.todoForm);
+  onSubmit() {
+    // console.log(this.todoForm.form.value.addItemInput);
+    // this.addedItem = this.todoForm.form.value.addItemInput;
     // this.allItems.push({
-    //   todoForm.addItemInput,
+    //   this.addedItem,
     //   completed: false,
     // });
   }
