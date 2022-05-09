@@ -19,27 +19,31 @@
     <hr />
 
     <ul>
+      <div class="container" *ngIf="bIsUpdating">
+        <app-item-edit></app-item-edit>
+      </div>
+
       <!-- remember me - adding an index to *ngFor -->
 
       <li *ngFor="let item of allItems; index as i">
         <div class="container">
           <div class="row">
             <div class="col">
-              <button class="btn btn-secondary btn-sm" (click)="updateItem(i)">
-                update
-              </button>
+              <strong
+                ><a (click)="updateItem(i)" style="cursor: pointer">{{
+                  item.info
+                }}</a></strong
+              >
             </div>
+
+            <div class="col">
+              {{ item.completed === true ? "(completed)" : "(not completed)" }}
+            </div>
+
             <div class="col">
               <button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">
                 delete
               </button>
-            </div>
-            <div class="col">
-              <strong> {{ item.info }}</strong>
-            </div>
-            <!-- <div class="col">/ completed = {{ item.completed }}</div> -->
-            <div class="col">
-              {{ item.completed === true ? "completed" : "not completed" }}
             </div>
           </div>
         </div>

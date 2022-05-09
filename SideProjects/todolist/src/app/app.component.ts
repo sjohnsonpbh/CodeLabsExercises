@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
 
   addItemInput = '';
   addedItem = '';
+  bIsUpdating = false;
 
   startList = [
     { info: 'wake up', completed: true },
@@ -36,7 +37,9 @@ export class AppComponent implements OnInit {
   // }
 
   updateItem(id: number) {
-    alert('Update ' + id);
+    this.bIsUpdating = true;
+    // alert('Update ' + id);
+
     // add a textbox to right side of page
     //
   }
