@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,18 +20,12 @@ export class AppComponent implements OnInit {
     { info: 'nap', completed: false },
   ];
 
-  allItems = [
-    { info: 'wake up', completed: true },
-    { info: 'cook', completed: false },
-    { info: 'walk', completed: false },
-    { info: 'push-ups', completed: false },
-    { info: 'nap', completed: false },
-  ];
+  allItems = [];
 
   router: any;
 
   ngOnInit() {
-    let allItems = this.startList.slice();
+    this.allItems = this.startList.slice();
   }
 
   // createItem(info: string) {
@@ -49,16 +42,16 @@ export class AppComponent implements OnInit {
   }
 
   deleteItem(id: number) {
-    // delete allItems[id];
-    // this.router.navigate(['/']);
+    this.allItems.splice(id, 1);
   }
 
   onSubmit() {
-    // console.log(this.todoForm.form.value.addItemInput);
-    // this.addedItem = this.todoForm.form.value.addItemInput;
-    // this.allItems.push({
-    //   this.addedItem,
-    //   completed: false,
-    // });
+    console.log(this.todoForm.form.value.addItemInput);
+    this.addedItem = this.todoForm.form.value.addItemInput;
+    this.allItems.push({
+      // remember me - left side is name of the object field, second is value
+      info: this.addedItem,
+      completed: false,
+    });
   }
 }
