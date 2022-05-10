@@ -1,4 +1,11 @@
-import { state, style, trigger } from "@angular/animations";
+// remember me - Animation transitions
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from "@angular/animations";
 import { Component } from "@angular/core";
 
 @Component({
@@ -20,6 +27,8 @@ import { Component } from "@angular/core";
           transform: "translateX(100px)",
         })
       ),
+      transition("normal => highlighted", animate(1300)),
+      transition("highlighted => normal", animate(800)),
     ]),
   ],
 })
@@ -27,7 +36,16 @@ export class AppComponent {
   state = "normal";
   list = ["Milk", "Sugar", "Bread"];
 
+  onAnimate() {
+    this.state == "normal"
+      ? (this.state = "highlighted")
+      : (this.state = "normal");
+  }
   onAdd(item) {
     this.list.push(item);
+  }
+
+  onDelete(item) {
+    this.list.splice(this.list.indexOf(item), 1);
   }
 }
