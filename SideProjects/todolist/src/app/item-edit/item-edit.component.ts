@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item-edit',
@@ -7,4 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemEditComponent {
   @Input() info: string;
+  @Output() close = new EventEmitter<number>();
+
+  onClose() {
+    this.close.emit();
+  }
+
+  onUpdate() {}
 }
