@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // remember me - @NgModule declarations array contains all the components,
 // directives, and custom pipes for our application
@@ -18,6 +19,7 @@ import { CoreModule } from './core.module';
     AppRoutingModule,
     SharedModule,
     CoreModule,
+    BrowserAnimationsModule,
   ],
   // remember me - Providers are added here, but can also be used in other
   // files by using { providedIn: 'root' }
