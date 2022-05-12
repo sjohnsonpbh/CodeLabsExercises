@@ -1,9 +1,14 @@
-<div class="backdrop" (click)="onClose()">
-  <div class="edit-box">
-    <textarea name="info" id="info" cols="20" rows="3">{{ info }}</textarea>
+<div class="backdrop" (click)="onUpdate()"></div>
+<div class="edit-box">
+  <textarea
+    name="info"
+    id="info"
+    cols="20"
+    rows="3"
+    [(ngModel)]="info.info"
+  ></textarea>
 
-    <div class="edit-box-action">
-      <button class="btn btn-primary" (click)="onClose()">update</button>
-    </div>
+  <div class="edit-box-action">
+    <button class="btn btn-primary" (click)="onUpdate()">update</button>
   </div>
 </div>

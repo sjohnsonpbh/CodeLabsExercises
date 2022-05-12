@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Item } from './item.model';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
   addItemInput = '';
   addedItem = '';
   bIsUpdating = false;
+  clickedItem: Item;
 
   startList = [
     { info: 'wake up', completed: true },
@@ -36,12 +38,13 @@ export class AppComponent implements OnInit {
   //   });
   // }
 
-  updateItem(id: number) {
+  updateItem(item: Item) {
     this.bIsUpdating = true;
     // alert('Update ' + id);
+    // passing the item object
+    this.clickedItem = item;
 
     // add a textbox to right side of page
-    //
   }
 
   deleteItem(id: number) {
