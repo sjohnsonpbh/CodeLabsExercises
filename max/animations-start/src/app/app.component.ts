@@ -13,6 +13,10 @@ import { Component } from "@angular/core";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
+
+  // remember me - trigger can be named anything, and create a
+  // target that will kick off the animations div
+  
   animations: [
     trigger("divState", [
       state(
@@ -166,5 +170,12 @@ export class AppComponent {
 
   onDelete(item) {
     this.list.splice(this.list.indexOf(item), 1);
+  }
+
+  animationStarted(event) {
+    console.log(event);
+  }
+  animationEnded(event) {
+    console.log(event);
   }
 }
