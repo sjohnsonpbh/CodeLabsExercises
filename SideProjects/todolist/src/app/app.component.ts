@@ -60,6 +60,7 @@ export class AppComponent implements OnInit {
       info: this.addedItem,
       completed: false,
     });
+    this.todoForm.resetForm();
   }
 
   goLogin() {

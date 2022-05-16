@@ -17,5 +17,5 @@ export class ItemEditComponent {
     this.close.emit();
   }
 
-  isCompleted() {}
+  onClose() {}
 }
