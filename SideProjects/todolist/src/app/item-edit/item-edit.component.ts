@@ -17,5 +17,7 @@ export class ItemEditComponent {
     this.close.emit();
   }
 
-  onClose() {}
+  onClose() {
+    // if info has been changed, revert to old value.
+  }
 }
