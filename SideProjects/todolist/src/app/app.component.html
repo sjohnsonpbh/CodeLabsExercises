@@ -13,7 +13,20 @@
           required
         />
 
-        <button type="submit" class="btn btn-primary btn-sm">Add</button>
+        <button
+          type="submit"
+          class="btn btn-primary btn-sm"
+          [disabled]="!todoForm.valid"
+        >
+          Add
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="goLogin()"
+        >
+          Login
+        </button>
       </form>
     </div>
     <hr />

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Item } from './item.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -52,12 +53,16 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.todoForm.form.value.addItemInput);
+    // console.log(this.todoForm.form.value.addItemInput);
     this.addedItem = this.todoForm.form.value.addItemInput;
     this.allItems.push({
       // remember me - left side is name of the object field, second is value
       info: this.addedItem,
       completed: false,
     });
+  }
+
+  goLogin() {
+    this.router.navigate(['/auth']);
   }
 }
