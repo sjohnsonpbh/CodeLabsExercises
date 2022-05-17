@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Item } from '../item.model';
 
 @Component({
@@ -10,11 +11,14 @@ export class ItemEditComponent {
   @Input() info: Item;
   @Output() close = new EventEmitter<void>();
 
-  onUpdate() {
-    // update the item.info property
+  changedText: string;
 
-    // close the page
-    this.close.emit();
+  onUpdate(form: NgForm) {
+    console.log(form);
+    // update the item.info property
+    // this.info = taskForm.info;
+    // // close the page
+    // this.close.emit();
   }
 
   onClose() {

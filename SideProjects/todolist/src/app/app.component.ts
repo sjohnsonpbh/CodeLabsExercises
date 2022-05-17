@@ -44,8 +44,6 @@ export class AppComponent implements OnInit {
     // alert('Update ' + id);
     // passing the item object
     this.clickedItem = item;
-
-    // add a textbox to right side of page
   }
 
   deleteItem(id: number) {

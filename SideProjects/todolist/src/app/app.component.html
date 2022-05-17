@@ -46,9 +46,15 @@
           <div class="row">
             <div class="col">
               <strong
-                ><a (click)="updateItem(item)" style="cursor: pointer">{{
-                  item.info
-                }}</a></strong
+                ><a
+                  (click)="updateItem(item)"
+                  style="
+                    cursor: pointer;
+                    color: blue;
+                    text-decoration: underline;
+                  "
+                  >{{ item.info }}</a
+                ></strong
               >
             </div>
 

@@ -1,14 +1,20 @@
 <div class="backdrop" (click)="onClose()"></div>
-<div class="edit-box">
-  <textarea
-    name="info"
-    id="info"
-    cols="20"
-    rows="3"
-    [(ngModel)]="info.info"
-  ></textarea>
 
-  <div class="edit-box-action">
-    <button class="btn btn-primary" (click)="onUpdate()">update</button>
+<!-- create a form -->
+<form (ngSubmit)="onUpdate(taskForm)" #taskForm="ngForm">
+  <div class="edit-box">
+    <textarea
+      name="info"
+      id="info"
+      cols="20"
+      rows="3"
+      value="{{ info.info }}"
+      ngModel
+    ></textarea>
+    <!-- <input type="text" name="info" id="info" value="{{ info.info }}" ngModel /> -->
+
+    <div class="edit-box-action">
+      <button class="btn btn-primary" type="submit">update</button>
+    </div>
   </div>
-</div>
+</form>
