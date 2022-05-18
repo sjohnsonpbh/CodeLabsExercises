@@ -2,14 +2,18 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Item } from './item.model';
 import { Router } from '@angular/router';
+import { ItemService } from './item.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [ItemService],
 })
 export class AppComponent implements OnInit {
   @ViewChild('todoForm', { static: false }) todoForm: NgForm;
+
+  constructor(private itemService: ItemService) {}
 
   addItemInput = '';
   addedItem = '';
