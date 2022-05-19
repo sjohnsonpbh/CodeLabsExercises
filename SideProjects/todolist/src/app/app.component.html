@@ -1,81 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
-        <label for="addItemInput">What would you like to do today?</label>
-        <input
-          type="text"
-          id="addItemInput"
-          class="lg-text-input"
-          ngModel
-          placeholder="Type a to-do list item here"
-          name="addItemInput"
-          required
-        />
-
-        <button
-          type="submit"
-          class="btn btn-primary btn-sm"
-          [disabled]="!todoForm.valid"
-        >
-          Add
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary btn-sm"
-          (click)="goLogin()"
-        >
-          Login
-        </button>
-      </form>
+      <app-item></app-item>
     </div>
-    <hr />
+  </div>
+</div>
 
-    <ul>
-      <div class="container" *ngIf="bIsUpdating">
-        <app-item-edit
-          [info]="clickedItem"
-          (close)="bIsUpdating = !bIsUpdating"
-        ></app-item-edit>
-      </div>
-
-      <!-- remember me - adding an index to *ngFor -->
-
-      <li *ngFor="let item of allItems; index as i">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <strong
-                ><a
-                  (click)="updateItem(item)"
-                  style="
-                    cursor: pointer;
-                    color: blue;
-                    text-decoration: underline;
-                  "
-                  >{{ item.info }}</a
-                ></strong
-              >
-            </div>
-
-            <div class="col">
-              <button
-                (click)="item.completed = !item.completed"
-                class="btn btn-primary"
-              >
-                {{
-                  item.completed === true ? "(completed)" : "(not completed)"
-                }}
-              </button>
-            </div>
-            <div class="col">
-              <button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">
-                delete
-              </button>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
