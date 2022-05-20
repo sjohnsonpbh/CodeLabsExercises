@@ -27,4 +27,12 @@ describe('UserComponent', () => {
     let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
+
+  // Test #1
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  // test #2 - pulled the user  info from the service
+  it('should pull user info from user service', () => {});
 });
