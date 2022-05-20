@@ -15,18 +15,26 @@ export class ItemEditComponent implements OnInit {
   constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
-    this.changedText = this.itemService.initialText;
-    console.log(this.changedText);
+    this.pristineText = this.itemService.initialText;
+    console.log('pristineText -' + this.pristineText);
     this.itemService.itemSubject.subscribe((itemValue) => {
-      this.changedText = itemValue;
-      console.log(this.changedText);
+      this.pristineText = itemValue;
+      console.log(this.pristineText);
     });
   }
-  changedText: string;
+  pristineText: string;
 
   onUpdate(form: NgForm) {
-    console.log(form.value);
-    console.log(this.changedText);
+    console.log(this.pristineText);
+    // console.log(this.pristineText);
+
+    if (this.pristineText === this.info.info) {
+      // item data did not change, just close window
+      this.close.emit();
+    } else {
+      //
+      console.log(this.pristineText);
+    }
 
     // configure text area
     //
