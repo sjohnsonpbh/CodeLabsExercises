@@ -1,9 +1,18 @@
 <h2>My Heroes</h2>
-<div class="heroes">
+<ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <span class="badge">
-      {{ hero.id }}
-    </span>
-    {{ hero.name }}
+    <button
+      [class.selected]="hero === selectedHero"
+      type="button"
+      (click)="onSelect(hero)"
+    >
+      <span class="badge">{{ hero.id }}</span>
+      <span class="name">{{ hero.name }}</span>
+    </button>
   </li>
-</div>
+</ul>
+<!-- remember me - Parent/child sending data to the child with
+     new hero to display whenever the user selects a hero from the list.
+    [hero]="selectedHero" is an Angular property binding. -->
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
