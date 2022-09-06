@@ -6,14 +6,14 @@ const username = 'scottoncode';
 // these statements pass in the condition where the if works (what is inside the parentheses)
 // then it executes the block of code between the brackets.
 
-//     if (name == 'scott' || name == 'chris') {
-//        alert('Hello!');
-//    } else if (name == 'holly') {
-//       console.log('this is holly');
-//     } 
-//     else {
-//        console.log('not scott')
-//     }
+if (name == 'scott' || name == 'chris') {
+    alert('Hello!');
+} else if (name == 'holly') {
+    console.log('this is holly');
+}
+else {
+    console.log('not scott')
+}
 
 
 // for loop
@@ -25,13 +25,13 @@ console.groupCollapsed("For Loop");
 //     { name: 'chance', type: 'bernese' }
 // ];
 
-//     for (let i = 0; i < dogs.length; i++) {
-//         // grab the dog array and loop through
-//         const dog            = dogs[i];
-//         const dogData        = document.createElement('div');
-//         dogData.innerText    = `${dog.name} is a ${dog.type}`;
-//         dogsList.appendChild(dogData);
-// }
+for (let i = 0; i < dogs.length; i++) {
+    // grab the dog array and loop through
+    const dog = dogs[i];
+    const dogData = document.createElement('div');
+    dogData.innerText = `${dog.name} is a ${dog.type}`;
+    dogsList.appendChild(dogData);
+}
 console.groupEnd();
 // while loop
 //   const dogsList = document.querySelector('.dogs-list');
@@ -65,7 +65,7 @@ console.groupCollapsed("Do While Loop");
 //         dogData.innerText    = `${dog.name} is a ${dog.type}`;
 //         dogsList.appendChild(dogData);
 //     }
-console.groupEnd();
+
 
 //        i++;
 //    }

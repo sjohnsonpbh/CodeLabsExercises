@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { Item } from './item.model';
 import { Router } from '@angular/router';
-import { ItemService } from './item.service';
+import { ItemService } from './item/item.service';
 
 @Component({
   selector: 'app-root',

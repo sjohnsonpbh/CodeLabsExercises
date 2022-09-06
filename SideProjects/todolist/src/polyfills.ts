@@ -1,3 +1,13 @@
+// from this webpage:
+// https://docs.amplify.aws/start/getting-started/setup/q/integration/angular/
+// Angular 6+ Support
+// Angular 6+ does not include shims for 'global' or 'process' as provided in previous versions. Add the following to your src/polyfills.ts file to recreate them:
+
+(window as any).global = window;
+(window as any).process = {
+  env: { DEBUG: undefined },
+};
+
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -57,8 +67,7 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js';  // Included with Angular CLI.
-
+import 'zone.js'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

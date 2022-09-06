@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <!-- <a routerLink="/auth" component="AuthComponent">Auth</a> -->
       <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
         <label for="addItemInput">What would you like to do today?</label>
         <input
@@ -20,12 +21,22 @@
         >
           Add
         </button>
+
         <button
+          *ngIf="!isLoggedIn"
           type="button"
           class="btn btn-primary btn-sm"
           (click)="goLogin()"
         >
           Login
+        </button>
+        <button
+          *ngIf="isLoggedIn"
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="onSignOut()"
+        >
+          Logout
         </button>
       </form>
     </div>
@@ -41,13 +52,13 @@
 
       <!-- remember me - adding an index to *ngFor -->
 
-      <li *ngFor="let item of allItems; index as i">
+      <li *ngFor="let item of allItems; index as idx">
         <div class="container">
           <div class="row">
             <div class="col">
               <strong
                 ><a
-                  (click)="updateItem(item)"
+                  (click)="updateItem(item, idx)"
                   style="
                     cursor: pointer;
                     color: blue;
@@ -69,7 +80,10 @@
               </button>
             </div>
             <div class="col">
-              <button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">
+              <button
+                class="btn btn-secondary btn-sm"
+                (click)="onDeleteItem(idx)"
+              >
                 delete
               </button>
             </div>
